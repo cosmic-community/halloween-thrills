@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { ShoppingBag, Ghost, Menu, X } from 'lucide-react'
-import Navigation from '@/components/Navigation'
+import { ShoppingBag, Ghost } from 'lucide-react'
+import Navigation, { MobileMenuButton } from '@/components/Navigation'
 
 export default function Header() {
   return (
@@ -26,7 +26,7 @@ export default function Header() {
           
           {/* Mobile menu button - now positioned on the far right */}
           <div className="md:hidden">
-            <Navigation.MobileMenuButton />
+            <MobileMenuButton />
           </div>
         </div>
       </div>

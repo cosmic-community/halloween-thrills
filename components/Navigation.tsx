@@ -13,8 +13,9 @@ const navigationItems = [
 ]
 
 // Mobile menu button component that can be used in Header
-function MobileMenuButton() {
+export function MobileMenuButton() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <>
@@ -40,7 +41,7 @@ function MobileMenuButton() {
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
-                    usePathname() === item.href
+                    pathname === item.href
                       ? 'text-primary'
                       : 'text-muted-foreground'
                   }`}
@@ -80,6 +81,3 @@ export default function Navigation() {
     </>
   )
 }
-
-// Export the mobile menu button so it can be used in Header
-Navigation.MobileMenuButton = MobileMenuButton
