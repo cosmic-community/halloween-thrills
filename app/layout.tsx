@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Halloween Thrills - Spookiest Halloween Store',
   description: 'Discover the most frightening costumes, decorations, and accessories for your Halloween celebration. Shop curated collections and read customer reviews.',
   keywords: 'halloween, costumes, decorations, spooky, scary, accessories, reviews',
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>"
+  }
 }
 
 export default function RootLayout({
