@@ -18,10 +18,16 @@ export default function Header() {
         <Navigation />
 
         <div className="flex items-center space-x-4">
+          {/* Cart button - now positioned to the left on mobile */}
           <button className="btn btn-outline p-2">
             <ShoppingBag className="h-5 w-5" />
             <span className="sr-only">Shopping cart</span>
           </button>
+          
+          {/* Mobile menu button - now positioned on the far right */}
+          <div className="md:hidden">
+            <Navigation.MobileMenuButton />
+          </div>
         </div>
       </div>
     </header>
