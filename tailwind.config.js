@@ -16,6 +16,7 @@ module.exports = {
         border: '#333333',
         muted: '#262626',
         'muted-foreground': '#a3a3a3',
+        ring: '#ff8d2f', // Added: Define ring color for focus states
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
