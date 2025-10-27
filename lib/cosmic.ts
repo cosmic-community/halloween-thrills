@@ -1,4 +1,5 @@
 import { createBucketClient } from '@cosmicjs/sdk'
+import { Product, Category, Collection, Review } from '@/types'
 
 export const cosmic = createBucketClient({
   bucketSlug: process.env.COSMIC_BUCKET_SLUG as string,
@@ -111,8 +112,8 @@ export async function getCollections() {
       .props(['id', 'title', 'slug', 'metadata'])
       .depth(1);
     
-    // Sort by display_order
-    const collections = response.objects.sort((a, b) => {
+    // Sort by display_order - Fixed: Added proper types for sort parameters
+    const collections = response.objects.sort((a: Collection, b: Collection) => {
       const orderA = a.metadata?.display_order || 999;
       const orderB = b.metadata?.display_order || 999;
       return orderA - orderB;
@@ -157,8 +158,8 @@ export async function getProductReviews(productId: string) {
       .props(['id', 'title', 'slug', 'metadata'])
       .depth(1);
     
-    // Sort by review_date (newest first)
-    const reviews = response.objects.sort((a, b) => {
+    // Sort by review_date (newest first) - Fixed: Added proper types for sort parameters
+    const reviews = response.objects.sort((a: Review, b: Review) => {
       const dateA = new Date(a.metadata?.review_date || '').getTime();
       const dateB = new Date(b.metadata?.review_date || '').getTime();
       return dateB - dateA;
