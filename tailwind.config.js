@@ -16,13 +16,21 @@ module.exports = {
         border: '#333333',
         muted: '#262626',
         'muted-foreground': '#a3a3a3',
-        ring: '#ff8d2f', // Added: Define ring color for focus states
+        ring: '#ff8d2f',
+        'ring-offset': '#0a0a0a',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #ff8d2f 0%, #ff6b1a 100%)',
+      },
+      ringColor: {
+        DEFAULT: '#ff8d2f',
+        ring: '#ff8d2f',
+      },
+      ringOffsetColor: {
+        DEFAULT: '#0a0a0a',
       },
     },
   },
