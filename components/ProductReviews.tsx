@@ -20,7 +20,7 @@ export default function ProductReviews({ reviews, productId }: ProductReviewsPro
       return (
         <svg
           key={index}
-          className={`w-5 h-5 ${filled ? 'text-yellow-400' : 'text-gray-300'}`}
+          className={`w-5 h-5 ${filled ? 'text-yellow-400' : 'text-muted-foreground'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -37,22 +37,22 @@ export default function ProductReviews({ reviews, productId }: ProductReviewsPro
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Customer Reviews</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-4">Customer Reviews</h2>
         
         {reviews.length > 0 ? (
           <div className="flex items-center space-x-2 mb-6">
             <div className="flex space-x-1">
               {renderStars(Math.round(averageRating))}
             </div>
-            <span className="text-lg font-semibold">
+            <span className="text-lg font-semibold text-foreground">
               {averageRating.toFixed(1)}
             </span>
-            <span className="text-gray-600">
+            <span className="text-muted-foreground">
               ({reviews.length} {reviews.length === 1 ? 'review' : 'reviews'})
             </span>
           </div>
         ) : (
-          <p className="text-gray-600 mb-6">No reviews yet. Be the first to review this product!</p>
+          <p className="text-muted-foreground mb-6">No reviews yet. Be the first to review this product!</p>
         )}
       </div>
 
@@ -65,10 +65,10 @@ export default function ProductReviews({ reviews, productId }: ProductReviewsPro
             : null
 
           return (
-            <div key={review.id} className="border-b border-gray-200 pb-6 last:border-b-0">
+            <div key={review.id} className="border-b border-border pb-6 last:border-b-0">
               <div className="flex items-start justify-between mb-3">
                 <div>
-                  <h4 className="font-semibold text-gray-900">
+                  <h4 className="font-semibold text-foreground">
                     {review.metadata?.customer_name || 'Anonymous'}
                   </h4>
                   <div className="flex items-center space-x-2 mt-1">
@@ -76,19 +76,19 @@ export default function ProductReviews({ reviews, productId }: ProductReviewsPro
                       {renderStars(rating)}
                     </div>
                     {review.metadata?.verified_purchase && (
-                      <span className="text-xs text-green-600 font-medium">
+                      <span className="text-xs text-green-400 font-medium">
                         Verified Purchase
                       </span>
                     )}
                   </div>
                 </div>
                 {reviewDate && (
-                  <span className="text-sm text-gray-500">{reviewDate}</span>
+                  <span className="text-sm text-muted-foreground">{reviewDate}</span>
                 )}
               </div>
               
               {review.metadata?.review_text && (
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-foreground leading-relaxed">
                   {review.metadata.review_text}
                 </p>
               )}
@@ -98,7 +98,7 @@ export default function ProductReviews({ reviews, productId }: ProductReviewsPro
       </div>
 
       {/* Add Review Button */}
-      <div className="pt-6 border-t border-gray-200">
+      <div className="pt-6 border-t border-border">
         <button className="w-full bg-[#ff8d2f] text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition-colors">
           Write a Review
         </button>

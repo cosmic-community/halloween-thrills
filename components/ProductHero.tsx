@@ -14,7 +14,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {/* Product Image */}
-      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+      <div className="aspect-square bg-muted rounded-lg overflow-hidden">
         {featuredImage ? (
           <img
             src={`${featuredImage.imgix_url}?w=600&h=600&fit=crop&auto=format,compress`}
@@ -24,7 +24,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
             height={600}
           />
         ) : (
-          <div className="flex items-center justify-center h-full text-gray-400">
+          <div className="flex items-center justify-center h-full text-muted-foreground">
             No image available
           </div>
         )}
@@ -33,7 +33,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
       {/* Product Info */}
       <div className="flex flex-col justify-center space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
             {productName}
           </h1>
           
@@ -50,12 +50,12 @@ export default function ProductHero({ product }: ProductHeroProps) {
               <span className="text-3xl font-bold text-[#ff8d2f]">
                 ${salePrice.toFixed(2)}
               </span>
-              <span className="text-xl text-gray-500 line-through">
+              <span className="text-xl text-muted-foreground line-through">
                 ${price?.toFixed(2)}
               </span>
             </>
           ) : (
-            <span className="text-3xl font-bold text-gray-900">
+            <span className="text-3xl font-bold text-foreground">
               ${price?.toFixed(2)}
             </span>
           )}
@@ -66,7 +66,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
             Add to Cart
           </button>
           
-          <button className="w-full border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+          <button className="w-full border border-border text-foreground px-8 py-3 rounded-lg font-medium hover:bg-muted transition-colors">
             Add to Wishlist
           </button>
         </div>
